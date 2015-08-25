@@ -1,4 +1,4 @@
-FROM phusion/baseimage:0.9.17
+FROM phusion/baseimage:0.9.16
 MAINTAINER Ivan Tarasov "Ivan.Tarasov@gmail.com"
 
 RUN add-apt-repository ppa:staticfloat/julianightlies && \
