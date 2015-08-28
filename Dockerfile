@@ -86,11 +86,12 @@ COPY jupyter_julia_config.py /tmp/
 RUN cat /tmp/jupyter_julia_config.py >> /root/.jupyter/jupyter_notebook_config.py
 
 # Clean up.
-RUN apt-get clean
-RUN rm -rf \
+RUN apt-get clean && \
+    rm -rf \
       /tmp/* \
       /var/tmp/* \
-      /var/lib/apt/lists/*
+      /var/lib/apt/lists/* \
+      /usr/share/doc/*
                     
 EXPOSE 8888
 
