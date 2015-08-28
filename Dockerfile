@@ -83,7 +83,9 @@ RUN julia -L /tmp/setup_julia_packages.jl
 # Generate Jupyter Julia config.
 RUN jupyter notebook --generate-config
 COPY jupyter_julia_config.py /tmp/
-RUN cat /tmp/jupyter_julia_config.py >> /root/.jupyter/jupyter_notebook_config.py
+RUN mkdir /notebooks && \
+    cat /tmp/jupyter_julia_config.py >> \
+      /root/.jupyter/jupyter_notebook_config.py
 
 # Clean up.
 RUN apt-get clean && \
@@ -93,6 +95,7 @@ RUN apt-get clean && \
       /var/lib/apt/lists/* \
       /usr/share/doc/*
                     
+VOLUME /notebooks
 EXPOSE 8888
 
 RUN mkdir /etc/service/jupyter && \
