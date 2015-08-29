@@ -11,11 +11,13 @@ Currently two Julia packages are customized:
 
 ## Usage
 
-To run the container:
+Run the container:
 
-    docker run -d -p 8888:8888 ivant/jupyter-ijulia
+    docker run -d -p 8888:8888 b.gcr.io/ivant-docker-images/juputer-ijulia
 
-Note that it is not password protected and anyone can access the notebook UI.
+and open [localhost:8888](http://localhost:8888) in your browser.
+
+**Note**: Jupyter in this image is not password protected, nor does it use https, and anyone can access the notebook UI.
 
 ## Known issues
 
