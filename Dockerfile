@@ -80,6 +80,11 @@ RUN mkdir cbc; cd cbc; wget http://www.coin-or.org/download/source/Cbc/Cbc-2.9.5
 COPY setup_julia_packages.jl /tmp/
 RUN julia -L /tmp/setup_julia_packages.jl
 
+# Temporary work around the precompilation issue in some packages.
+COPY fix_package_precompilation.sh /root/
+RUN chmod a+x /root/fix_package_precompilation.sh && \
+    /root/fix_package_precompilation.sh
+
 # Generate Jupyter Julia config.
 RUN jupyter notebook --generate-config
 COPY jupyter_julia_config.py /tmp/

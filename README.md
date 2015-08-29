@@ -31,8 +31,15 @@ and open [localhost:8888](http://localhost:8888) in your browser.
    statement at the beginning of a `Foo.jl` file for each package `Foo` that
    does not already forbid precompilation using `__precompile__(false)`.
 
-   This will be automated shortly during Docker build as a short-term
-   workaround for the preinstalled packages.
+   This workaround is automatically applied during Docker build as a short-term
+   solution for the preinstalled packages.
+
+   Should you need to fix the packages you have installed, run the following in
+   your IJulia session:
+
+   ```
+   run(`/root/fix_package_precompilation.sh`)
+   ```
 
 [1]: http://jupyter.org
 [2]: http://julialang.org
