@@ -13,7 +13,7 @@ pkgs = [
   "Cairo",
   "Clp",
   "Clustering",
-  "Clustering",
+  "Colors",
   "DataArrays",
   "DataFrames",
   "DataStructures",
